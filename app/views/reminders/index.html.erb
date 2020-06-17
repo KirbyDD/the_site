@@ -1,0 +1,7 @@
+<main>
+  <% @reminders.each do |reminder|%>
+    <article class="reminders">
+      <h2><%= link_to "#{reminder.title}", "/reminders/#{reminder.id}" %></h2>
+    </article>
+  <% end %>
+</main>
