@@ -1,0 +1,38 @@
+body {
+  color: white;
+  background-color: black;
+}
+
+.homepage {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: -webkit-fill-available;
+  width: 100%;
+}
+
+.home-panel {
+  border: 2px solid;
+  border-color: cyan;
+  height: 50%;
+  padding: 40px;
+  width: 85%;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 7rem;
+  text-shadow: 5px 5px 5px cyan;
+}
+
+.welcome-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.welcome-btn {
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px cyan;
+  font-size: 1.5rem;
+  padding: 15px;
+}
