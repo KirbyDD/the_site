@@ -1,0 +1,26 @@
+.form-page {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: -webkit-fill-available;
+  width: 100%;
+}
+
+.form {
+  border: 2px solid cyan;
+  box-shadow: 5px 6px 7px cyan;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  width: 30%;
+}
+
+label {
+  font-size: 1.3rem;
+}
+
+input {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
