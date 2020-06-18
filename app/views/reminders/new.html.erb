@@ -1,18 +1,21 @@
-<%= form_tag "/reminders" do %>
-  <%= label_tag :title %>
-  <%= text_field_tag :title %>
+<main class='form-page'>
+  <h2>Create a Show/Manga Reminder</h2>
+  <%= form_tag "/reminders", class: "form" do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title %>
 
-  <%= label_tag :episode %>
-  <%= number_field_tag :episode %>
+    <%= label_tag :episode %>
+    <%= number_field_tag :episode %>
 
-  <%= label_tag :chapter %>
-  <%= number_field_tag :chapter %>
+    <%= label_tag :chapter %>
+    <%= number_field_tag :chapter %>
 
-  <%= label_tag :message %>
-  <%= text_field_tag :message %>
+    <%= label_tag :message %>
+    <%= text_field_tag :message %>
 
-  <%= label_tag :link %>
-  <%= text_field_tag :link %>
+    <%= label_tag :link %>
+    <%= text_field_tag :link %>
 
-  <%= submit_tag "Create Reminder" %>
-<% end %>
+    <%= submit_tag "Create Reminder" %>
+  <% end %>
+</main>
