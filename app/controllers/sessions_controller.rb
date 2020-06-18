@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new
     if current_user
       flash[:notice] = 'You are already logged in!'
-      redirect_to "/profile"
+      redirect_to "/dashboard"
     end
   end
 
