@@ -1,7 +1,10 @@
-<main>
-  <% @reminders.each do |reminder|%>
-    <article class="reminders">
-      <h2><%= link_to "#{reminder.title}", "/reminders/#{reminder.id}" %></h2>
-    </article>
-  <% end %>
+<main class='homepage'>
+  <section class='reminder-panel '>
+    <h2>List of Shows/Manga</h2>
+    <% @reminders.each do |reminder|%>
+      <article class="reminders">
+        <h2><%= link_to "#{reminder.title}", "/reminders/#{reminder.id}", class: "reminder" %></h2>
+      </article>
+    <% end %>
+  </section>
 </main>

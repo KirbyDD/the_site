@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.link-btn {
+  border: 1px solid cyan;
+  background-color: black;
+  color: cyan;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.btn {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+}

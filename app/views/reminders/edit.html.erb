@@ -1,0 +1,21 @@
+<main class='form-page'>
+  <h2>Create a Show/Manga Reminder</h2>
+  <%= form_tag "/reminders/#{@reminder.id}", method: :patch, class: "form" do %>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @reminder.title %>
+
+    <%= label_tag :episode %>
+    <%= number_field_tag :episode, @reminder.episode %>
+
+    <%= label_tag :chapter %>
+    <%= number_field_tag :chapter, @reminder.chapter %>
+
+    <%= label_tag :message %>
+    <%= text_field_tag :message, @reminder.message %>
+
+    <%= label_tag :link %>
+    <%= text_field_tag :link, @reminder.link %>
+
+    <%= submit_tag "Update Reminder" %>
+  <% end %>
+</main>

@@ -10,6 +10,26 @@ class RemindersController < ApplicationController
     @reminders = current_user.reminders
   end
 
+  def show
+    @reminder = Reminder.find(params[:id])
+  end
+
+  def edit
+    @reminder = Reminder.find(params[:id])
+  end
+
+  def update
+    reminder = Reminder.find(params[:id])
+    reminder.update(reminder_params)
+    reminder.save
+    redirect_to "/reminders/#{params[:id]}"
+  end
+
+  def destroy
+    Reminder.delete(params[:id])
+    redirect_to "/reminders"
+  end
+  
   private
 
   def reminder_params

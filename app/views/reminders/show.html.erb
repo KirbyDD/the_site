@@ -1,0 +1,16 @@
+<main class='homepage'>
+  <section class='home-panel'>
+    <h1>Title: <%= @reminder.title %> </h1>
+    <% if @reminder.episode %>
+      <h2>Episode: <%= @reminder.episode %></h2>
+    <% end %>
+    <% if @reminder.chapter %>
+      <h2>Chapter: <%= @reminder.chapter %></h2>
+    <% end %>
+    <h2>Reminder Message: <%= @reminder.message %></h2>
+
+    <%= link_to "Go Read/Watch", @reminder.link, class: "link-btn" %>
+    <%= link_to "Update", "/reminders/#{@reminder.id}/edit", class: "btn" %>
+    <%= link_to "Delete", "/reminders/#{@reminder.id}/", method: :delete , class: "btn"%>
+  </section>
+</main>
