@@ -7,11 +7,21 @@ class RemindersController < ApplicationController
   end
 
   def index
-    @reminders = current_user.reminders
+    if current_user
+      @reminders = current_user.reminders.order(:title)
+    else
+      flash[:notice] = 'You Are Not Logged In.'
+      redirect_to '/'
+    end
   end
 
   def show
-    @reminder = Reminder.find(params[:id])
+    if current_user
+      @reminder = Reminder.find(params[:id])
+    else
+      flash[:notice] = 'You Are Not Logged In.'
+      redirect_to '/'
+    end
   end
 
   def edit
@@ -29,7 +39,7 @@ class RemindersController < ApplicationController
     Reminder.delete(params[:id])
     redirect_to "/reminders"
   end
-  
+
   private
 
   def reminder_params

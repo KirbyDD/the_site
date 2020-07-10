@@ -1,10 +1,6 @@
 <main class='dashboard-page'>
   <section class='dash-panel'>
-    <h1>Welcome <%= current_user.username %>
+    <h1>Welcome <%= current_user.username %></h1>
     <p>Number of Show/Manga Reminders: <%= current_user.reminders.count %></p>
-    <div class="welcome-btns">
-      <%= button_to "Make New Reminder", "/reminders/new", class: "welcome-btn", method: :get %>
-      <%= button_to "Reminders", "/reminders", class: "welcome-btn", method: :get %>
-    </div>
   </section>
 </main>

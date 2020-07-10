@@ -9,11 +9,13 @@
 
 .reminder-panel {
   align-items: center;
+  background-color: black;
   border: 2px solid;
   border-color: cyan;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  height: 600px;
+  height: 500px;
   overflow-y: scroll;
   padding: 40px 10px;
   width: 45%;

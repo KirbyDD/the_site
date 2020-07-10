@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: -webkit-fill-available;
   width: 100%;
 }
 
 .form {
+  background-color: black;
   border: 2px solid cyan;
   box-shadow: 5px 6px 7px cyan;
   display: flex;

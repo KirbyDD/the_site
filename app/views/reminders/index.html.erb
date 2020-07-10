@@ -1,5 +1,6 @@
 <main class='homepage'>
   <section class='reminder-panel '>
+    <%= button_to "Make New Reminder", "/reminders/new", class: "reminder", method: :get %>
     <h2>List of Shows/Manga</h2>
     <% @reminders.each do |reminder|%>
       <article class="reminders">
