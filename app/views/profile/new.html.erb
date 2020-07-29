@@ -1,0 +1,16 @@
+<main class='form-page'>
+  <%= form_tag "/users/#{current_user.id}/profile", method: :post, class: "form" do %>
+
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name %>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name %>
+    <%= label_tag :age %>
+    <%= number_field_tag :age %>
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
+
+    <%= submit_tag "Create Profile" %>
+
+  <% end %>
+</main>

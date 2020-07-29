@@ -1,7 +1,9 @@
 .dashboard-page {
   align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  justify-content: space-around;
   width: 100%;
 }
 

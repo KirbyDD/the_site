@@ -15,8 +15,12 @@ RSpec.describe 'As a user' do
     click_on "Create Reminder"
 
     expect(current_path).to eq('/dashboard')
-
     reminder = Reminder.last
+
+    visit '/reminders'
+    expect(reminder[:title]).to eq("Test Title")
+    click_on "Test Title"
+    expect(current_path).to eq("/reminders/#{reminder.id}")
 
     expect(reminder[:title]).to eq("Test Title")
     expect(reminder[:message]).to eq("Test Message")

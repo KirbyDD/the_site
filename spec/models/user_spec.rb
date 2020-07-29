@@ -7,4 +7,9 @@ RSpec.describe User do
     it { should validate_uniqueness_of :email}
     it { should validate_uniqueness_of :username }
   end
+
+  describe 'relationships' do
+    it {should have_many :reminders}
+    it {should have_one :profile}
+  end
 end

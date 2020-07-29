@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#show'
 
   resources :reminders, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-  resources :users, only: [:create, :destroy]
+  resources :users, only: [:new, :create, :destroy] do
+      resources :profile, only: [:new, :create, :edit, :update]
+  end
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

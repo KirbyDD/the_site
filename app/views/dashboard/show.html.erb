@@ -1,6 +1,19 @@
 <main class='dashboard-page'>
   <section class='dash-panel'>
     <h1>Welcome <%= current_user.username %></h1>
+    <% unless current_user.profile %>
+      <p><%= link_to "Add Profile", "/users/#{current_user.id}/profile/new" %></p>
+    <% else %>
+      <p><%= link_to "Update Profile", "/users/#{current_user.id}/profile/new" %></p>
+    <% end %>
     <p>Number of Show/Manga Reminders: <%= current_user.reminders.count %></p>
   </section>
+
+  <% if current_user.profile %>
+    <section class='dash-panel'>
+      <p> Name: <%= current_user.profile.first_name %> <%= current_user.profile.last_name %></p>
+      <p> Age: <%= current_user.profile.age %></p>
+      <p> Location: <%= current_user.profile.location %></p>
+    </section>
+  <% end %>
 </main>
