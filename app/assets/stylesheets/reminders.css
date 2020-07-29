@@ -7,6 +7,12 @@
   padding: 15px;
 }
 
+.reminder:hover {
+  background-color: cyan;
+  color: black;
+  transition: 0.3s;
+}
+
 .reminder-panel {
   align-items: center;
   background-color: black;
