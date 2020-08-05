@@ -1,0 +1,15 @@
+<main class='form-page'>
+  <%= form_tag "/users/#{current_user.id}/profile/#{@profile.id}", method: :patch, class: "form" do %>
+
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, @profile.first_name %>
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, @profile.last_name %>
+    <%= label_tag :age %>
+    <%= number_field_tag :age, @profile.age %>
+    <%= label_tag :location %>
+    <%= text_field_tag :location, @profile.location %>
+    <%= submit_tag "Update Profile" %>
+
+  <% end %>
+</main>
