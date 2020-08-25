@@ -1,10 +1,14 @@
 class SessionsController < ApplicationController
+  def index; end
+
   def new
     if current_user
       flash[:notice] = 'You are already logged in!'
       redirect_to "/dashboard"
     end
   end
+
+  def show; end
 
   def create
     user = User.find_by(email: params[:email])
@@ -15,6 +19,13 @@ class SessionsController < ApplicationController
     else
       flash[:notice] = "Invalid Email and/or Password"
       redirect_to "/login"
+    end
+  end
+
+  def update
+    question = SecurityQuestion.find(params[:id])
+    if question.answer == params[:answer]
+      redirect_to "/password_reset/#{question.user.id}"
     end
   end
 

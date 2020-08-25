@@ -4,9 +4,15 @@
     <% unless current_user.profile %>
       <p><%= link_to "Add Profile", "/users/#{current_user.id}/profile/new" %></p>
     <% else %>
-      <p><%= link_to "Update Profile", "/users/#{current_user.id}/profile/new" %></p>
+      <p><%= link_to "Update Profile", "/users/#{current_user.id}/profile/edit" %></p>
     <% end %>
     <p>Number of Show/Manga Reminders: <%= current_user.reminders.count %></p>
+    <% if current_user.security_question %>
+      <p>Security Question is Set<p>
+    <% else %>
+      <p>Security Question is Not Set<p>
+      <p><%= link_to "Click here to Add", "/users/#{current_user.id}/security_questions/new" %></p>
+    <% end %>
   </section>
 
   <% if current_user.profile %>
@@ -16,4 +22,5 @@
       <p> Location: <%= current_user.profile.location %></p>
     </section>
   <% end %>
+
 </main>

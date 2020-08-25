@@ -1,0 +1,11 @@
+<main class='form-page'>
+  <h2><%= @security_question.question %>
+  <%= form_tag "/forgot/#{security_question.id}", method: :post, class: "form" do %>
+
+    <%= label_tag :answer %>
+    <%= text_field_tag :answer %>
+
+    <%= submit_tag "Submit" %>
+
+  <% end %>
+</main>

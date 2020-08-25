@@ -1,0 +1,12 @@
+<main class='form-page'>
+  <%= form_tag "/users/#{current_user.id}/security_questions", method: :post, class: "form" do %>
+
+    <%= label_tag :question %>
+    <%= text_field_tag :question %>
+    <%= label_tag :answer %>
+    <%= text_field_tag :answer %>
+
+    <%= submit_tag "Set Security Question" %>
+
+  <% end %>
+</main>
