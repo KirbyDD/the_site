@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   post '/forgot', to: 'security_questions#show'
   patch '/forgot/:id', to: 'sessions#update'
 
-  get '/password_reset/:id' to: 'pass#edit'
-  patch '/password_reset/:id' to: 'pass#update'
+  get '/password_reset/:id', to: 'pass#edit'
+  patch '/password_reset/:id', to: 'pass#update'
 end
