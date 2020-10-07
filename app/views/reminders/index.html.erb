@@ -1,11 +1,19 @@
 <main class='homepage'>
-  <section class='reminder-panel '>
-    <%= button_to "Make New Reminder", "/reminders/new", class: "reminder", method: :get %>
+  <section class="reminder-page">
+    <%= button_to "Make New Reminder", "/reminders/new", class: "reminder-maker", method: :get %>
     <h2>List of Shows/Manga</h2>
+    <section class='reminder-panel '>
     <% @reminders.each do |reminder|%>
-      <article class="reminders">
-        <h2><%= link_to "#{reminder.title}", "/reminders/#{reminder.id}", class: "reminder" %></h2>
-      </article>
+        <%= link_to "/reminders/#{reminder.id}", class: "reminders" do %>
+          <h2 class="reminder reminder-title"><%= reminder.title %></h2>
+          <% if reminder.episode %>
+            <h2 class="reminder">Episode: <%= reminder.episode %></h2>
+          <% end %>
+          <% if reminder.chapter %>
+            <h2 class="reminder">Chapter: <%= reminder.chapter %></h2>
+          <% end %>
+        <% end %>
     <% end %>
+    </section>
   </section>
 </main>

@@ -1,4 +1,29 @@
+.reminders {
+  align-items: center;
+  background-color: black;
+  border: 2px solid cyan;
+  border-radius: 10px;
+  box-shadow: 5px 5px 9px silver;
+  color: cyan;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 22%;
+}
+
 .reminder {
+  font-size: 1.3rem;
+  margin: 3px;
+  padding: 10px;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+.reminder-maker {
   border: 1px solid cyan;
   background-color: black;
   color: cyan;
@@ -7,22 +32,39 @@
   padding: 15px;
 }
 
-.reminder:hover {
+.reminders:hover {
+  background-color: cyan;
+  border: 2px solid black;
+  color: black;
+  transition: 0.3s;
+}
+
+.reminder-maker:hover {
   background-color: cyan;
   color: black;
   transition: 0.3s;
 }
 
 .reminder-panel {
-  align-items: center;
   background-color: black;
   border: 2px solid;
   border-color: cyan;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
-  height: 500px;
+  flex-wrap: wrap;
+  height: 480px;
   overflow-y: scroll;
   padding: 40px 10px;
-  width: 45%;
+  width: 95%;
+}
+
+.reminder-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.reminder-title {
+  font-size: 1.5rem;
 }

@@ -3,7 +3,7 @@ class RemindersController < ApplicationController
 
   def create
     current_user.reminders.create(reminder_params)
-    redirect_to "/dashboard"
+    redirect_to "/reminders"
   end
 
   def index

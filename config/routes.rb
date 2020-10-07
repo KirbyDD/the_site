@@ -10,7 +10,6 @@ Rails.application.routes.draw do
       resources :security_questions
   end
 
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/register', to: 'users#new'
