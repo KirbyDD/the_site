@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "home#index"
 
   get '/dashboard', to: 'dashboard#show'
+  patch '/roles_setup', to: 'home#update'
 
   resources :reminders, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   resources :users, only: [:new, :create, :destroy] do
@@ -21,4 +22,9 @@ Rails.application.routes.draw do
 
   get '/password_reset/:id', to: 'pass#edit'
   patch '/password_reset/:id', to: 'pass#update'
+
+  namespace :admin do
+    get '/', to: 'dashboard#index'
+    patch '/set_users', to: 'dashboard#update'
+  end
 end

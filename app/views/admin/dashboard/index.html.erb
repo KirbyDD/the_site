@@ -1,0 +1,7 @@
+<h1>You made it!</h1>
+
+<% @users.each do |user| %>
+  <p>Username: <%= user.username %> E-mail: <%= user.email %> Role: <%= user.role %></p>
+<% end %>
+
+<%= button_to "Set Role for Users", "/admin/set_users", class: "reminder-maker", method: :get %>

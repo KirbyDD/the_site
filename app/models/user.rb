@@ -5,5 +5,7 @@ class User < ApplicationRecord
   has_one :profile
   has_one :security_question
 
+  enum role: %w(default admin)
+
   has_secure_password
 end

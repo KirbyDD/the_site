@@ -1,5 +1,7 @@
-class HomeController < ApplicationController
-  def index; end
+class Admin::DashboardController < Admin::BaseController
+  def index
+    @users = User.all
+  end
 
   def update
     users = User.all
@@ -13,4 +15,5 @@ class HomeController < ApplicationController
     end
     redirect_to '/'
   end
+
 end

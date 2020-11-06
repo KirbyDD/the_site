@@ -15,6 +15,9 @@
       <nav>
         <p><%= link_to "Dashboard", "/dashboard", class: "btn" %></p>
         <p><%= link_to "Reminders", "/reminders", class: "btn" %></p>
+        <% if current_admin? %>
+          <p><%= link_to "Admin Dashboard", "/admin", class: "btn" %></p>
+        <% end %>
         <% if current_user %>
           <p><%= link_to "Log Out", "/logout", class: "link-btn"%></p>
         <% else %>
