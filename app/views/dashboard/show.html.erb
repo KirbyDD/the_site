@@ -1,6 +1,7 @@
 <main class='dashboard-page'>
   <section class='dash-panel'>
     <h1>Welcome <%= current_user.username %></h1>
+    <p><%= link_to "Update Username", "/users/#{current_user.id}/edit" %></p>
     <% unless current_user.profile %>
       <p><%= link_to "Add Profile", "/users/#{current_user.id}/profile/new" %></p>
     <% else %>

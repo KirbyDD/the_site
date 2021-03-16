@@ -16,6 +16,20 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    user = User.find_by(username: params[:username])
+    unless user
+      current_user.update(username: params[:username])
+      redirect_to "/dashboard"
+    else
+      flash[:notice] = "Username already in use!"
+      render :edit
+    end
+  end
+
   private
 
   def user_params

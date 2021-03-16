@@ -3,12 +3,25 @@ Rails.application.routes.draw do
   root "home#index"
 
   get '/dashboard', to: 'dashboard#show'
-  patch '/roles_setup', to: 'home#update'
+
+  get '/forum', to: 'board#index'
+  get '/forum/:abbre', to: 'board#show'
+
 
   resources :reminders, only: [:new, :create, :index, :show, :edit, :update, :destroy]
-  resources :users, only: [:new, :create, :destroy] do
+  resources :users, only: [:new, :create, :edit, :destroy] do
       resources :profile, only: [:new, :create, :edit, :update]
       resources :security_questions
+  end
+  patch '/users/:id', to: 'users#update'
+  get '/users/:id/profile/edit', to: "profile#edit"
+
+  namespace :admin do
+    get '/', to: 'dashboard#index'
+    patch '/set_users', to: 'dashboard#update'
+    get '/forum/new', to: 'board#new'
+    post '/forum', to: 'board#create'
+    delete '/forum/:abbre', to: 'board#destroy'
   end
 
   get '/login', to: 'sessions#new'
@@ -22,9 +35,4 @@ Rails.application.routes.draw do
 
   get '/password_reset/:id', to: 'pass#edit'
   patch '/password_reset/:id', to: 'pass#update'
-
-  namespace :admin do
-    get '/', to: 'dashboard#index'
-    patch '/set_users', to: 'dashboard#update'
-  end
 end

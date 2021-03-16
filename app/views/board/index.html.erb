@@ -1,0 +1,5 @@
+<h2>List of Forums</h2>
+
+<% @boards.each do |board| %>
+  <p><%= link_to "#{board.name}", "/forum/#{board.abbre}" %></p>
+<% end %>

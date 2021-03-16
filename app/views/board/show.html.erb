@@ -1,0 +1,16 @@
+<main>
+  <h1><%= @board.name %></h1>
+  <%= link_to "Create New Post", "/posts/new" %>
+  <section>
+    <% if @board.posts %>
+      <% @board.posts.each do |post| %>
+        <article class="">
+          <p><%= post.title %></p>
+          <p>Last Updated: <%= post.updated_at%></p>
+        </article>
+      <% end %>
+    <% else %>
+      <h2>No posts have been made on this board...</h2>
+    <% end %>
+  </section>
+</main>

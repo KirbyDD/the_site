@@ -4,4 +4,5 @@
   <p>Username: <%= user.username %> E-mail: <%= user.email %> Role: <%= user.role %></p>
 <% end %>
 
+<%= button_to "Create Board", "/admin/forum/new", class: "reminder-maker", method: :get %>
 <%= button_to "Set Role for Users", "/admin/set_users", class: "reminder-maker", method: :get %>

@@ -1,0 +1,9 @@
+<%= form_tag "/admin/forum", class: "form" do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag :abbre %>
+  <%= text_field_tag :abbre %>
+
+  <%= submit_tag "Create Board" %>
+<% end %>
