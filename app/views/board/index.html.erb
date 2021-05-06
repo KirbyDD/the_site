@@ -1,5 +1,14 @@
 <h2>List of Forums</h2>
 
-<% @boards.each do |board| %>
-  <p><%= link_to "#{board.name}", "/forum/#{board.abbre}" %></p>
-<% end %>
+<main class="forum-page">
+  <section class="forum-list">
+    <% @boards.each do |board| %>
+      <article class="forum-cat-article">
+        <%= link_to "/forum/#{board.abbre}", class: "text-dec" do %>
+          <p class="forum-cat"><%= board.abbre %></p>
+          <p class="forum-cat forum-cat-name"><%= board.name %></p>
+        <% end %>
+      </article>
+    <% end %>
+  </section>
+</main>

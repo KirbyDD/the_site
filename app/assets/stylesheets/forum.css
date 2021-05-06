@@ -1,0 +1,31 @@
+.forum-page {
+  display: flex;
+  justify-content: center;
+}
+
+.forum-list {
+  border: 2px solid cyan;
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+}
+
+.forum-cat-article {
+  background-color: black;
+  border: 2px solid cyan;
+  margin: 10px 15px;
+  text-align: center;
+  width: 22%;
+}
+
+.forum-cat {
+  color: white;
+}
+
+.forum-cat-name {
+  font-size: 1.5rem;
+}
+
+.text-dec {
+  text-decoration: none;
+}
